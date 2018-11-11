@@ -90,7 +90,7 @@ module Apotomo
       def render_iframe_updates(page_updates)
         escaped_script = Apotomo::JavascriptGenerator.escape(page_updates.join("\n"))
 
-        render :text => "<html><body><script type='text/javascript' charset='utf-8'>
+        render :html => "<html><body><script type='text/javascript' charset='utf-8'>
 var loc = document.location;
 with(window.parent) { setTimeout(function() { window.eval('#{escaped_script}'); window.loc && loc.replace('about:blank'); }, 1) }
 </script></body></html>", :content_type => 'text/html'
