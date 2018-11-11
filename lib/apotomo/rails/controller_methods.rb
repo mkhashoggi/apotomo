@@ -70,7 +70,7 @@ module Apotomo
         puts page_updates
         puts "\n"
         
-        format.js { render :plain => page_updates.join("\n"), content_type: 'text/javascript' }
+        render :plain => page_updates.join("\n"), content_type: 'text/javascript'
 
       end
 
