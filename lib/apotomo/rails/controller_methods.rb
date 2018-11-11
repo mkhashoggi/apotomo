@@ -70,7 +70,8 @@ module Apotomo
         puts page_updates
         puts "\n"
         
-        render :html => page_updates.join("\n"), :content_type => Mime[:JS]
+        format.js { render :plain => page_updates.join("\n") }
+
       end
 
       # Returns the url to trigger a +type+ event from +:source+, which is a non-optional parameter.
