@@ -66,7 +66,10 @@ module Apotomo
         page_updates = apotomo_request_processor.process_for(params)
 
         return render_iframe_updates(page_updates) if params[:apotomo_iframe]
-
+        
+        puts page_updates
+        puts "\n"
+        
         render :html => page_updates.join("\n"), :content_type => Mime[:JS]
       end
 
